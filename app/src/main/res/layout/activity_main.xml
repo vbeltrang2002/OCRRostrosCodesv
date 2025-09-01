@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FB262525"
+    android:paddingTop="30dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FB262525">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#6B0202"
+            android:text="Google ML Kit"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Fila superior: Cámara | Seleccionar Imagen (Plateados) -->
+        <Button
+            android:id="@+id/btCamera"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#C0C0C0"
+            android:text="Cámara"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toStartOf="@+id/btnPickImage"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitulo" />
+
+        <Button
+            android:id="@+id/btnPickImage"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#C0C0C0"
+            android:text="Seleccionar Imagen"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/btCamera"
+            app:layout_constraintTop_toBottomOf="@id/txtTitulo" />
+
+        <!-- Imagen (más grande) -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_margin="10dp"
+            android:background="#FB262525"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btCamera" />
+
+        <!-- Resultados -->
+        <TextView
+            android:id="@+id/textResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            android:text="Resultado aquí..."
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+        <!-- Fila inferior: OCR | Rostros | QR/Barras (Dorados) -->
+        <Button
+            android:id="@+id/btText"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FFD700"
+            android:text="OCR"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toStartOf="@id/btFace"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textResult" />
+
+        <Button
+            android:id="@+id/btFace"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FFD700"
+            android:text="Rostros"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@id/btText"
+            app:layout_constraintEnd_toStartOf="@id/btQR"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/btText"
+            app:layout_constraintTop_toTopOf="@id/btText" />
+
+        <Button
+            android:id="@+id/btQR"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FFD700"
+            android:text="QR/Barras"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@id/btText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/btFace"
+            app:layout_constraintTop_toTopOf="@id/btText" />
+
+        <TextView
+            android:id="@+id/tvCredits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Por HB, WV, NV &amp; GC®"
+            android:textColor="#EDECEC"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
